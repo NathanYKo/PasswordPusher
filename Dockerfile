@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y nodejs npm
 RUN npm install -g yarn
 
 COPY Gemfile Gemfile.lock ./
+RUN gem install bundler
 RUN bundle install
 
 COPY . .
